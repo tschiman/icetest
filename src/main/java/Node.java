@@ -6,9 +6,7 @@ public class Node {
     private List<Node> children = new ArrayList<>(); //empty list if no children
     private Object value; //values can be any object, equality checked on object references
 
-    public Node(Node parent, List<Node> children, Object value) {
-        this.parent = parent;
-        this.children = children;
+    public Node(Object value) {
         this.value = value;
     }
 
@@ -29,7 +27,7 @@ public class Node {
     }
 
     public void addChild(Node node) {
-        node.parent = this.parent;
+        node.parent = this;
         children.add(node);
     }
 
